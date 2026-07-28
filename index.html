@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uncensored AI Chat | Flexible Private AI Conversations</title>
+<meta name="description" content="Uncensored AI Chat is a private AI chat platform for flexible conversations, roleplay, creative writing, brainstorming, and user-directed interaction.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap');
+:root{
+  --bg:#07111a; --bg-alt:#0e1724; --card:#111c2c; --card2:#152235;
+  --accent:#f59e0b; --accent2:#22c55e; --accent3:#38bdf8;
+  --text:#eef2ff; --muted:#aab5cb; --border:#22314a;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.75;}
+a{text-decoration:none;color:inherit;}
+h1,h2,h3,h4{font-family:'Sora',sans-serif;color:#fff;line-height:1.18;}
+img{max-width:100%;display:block;}
+main a,.hero a,.block a,.embed-card a,.faq-a a{color:var(--accent3);text-decoration:none;}
+main a:hover,.hero a:hover,.block a:hover,.embed-card a:hover,.faq-a a:hover{color:#fff;}
+.highlight-link{
+  color:#ffcf70 !important;
+  text-decoration:none;
+  
+  
+  font-weight:700;
+}
+.highlight-link:hover{color:#fff !important;}
+header{position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 44px;background:rgba(7,17,26,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);}
+.logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.22rem;background:linear-gradient(90deg,var(--accent),var(--accent3));-webkit-background-clip:text;background-clip:text;color:transparent;}
+nav ul{list-style:none;display:flex;align-items:center;gap:24px;flex-wrap:wrap;justify-content:flex-end;}
+nav a{color:var(--muted);font-weight:600;}
+nav a:hover{color:#fff;}
+.dropdown{position:relative;}
+.dropdown-toggle{display:inline-flex;align-items:center;gap:8px;background:none;border:0;padding:0;color:var(--muted);font:inherit;font-weight:600;cursor:pointer;}
+.dropdown-toggle:hover{color:#fff;}
+.dropdown-toggle .caret{font-size:.76rem;transform:translateY(1px);}
+.dropdown-menu{position:absolute;top:calc(100% + 10px);left:0;min-width:260px;background:#fff;color:#111;border:1px solid #ddd;border-radius:14px;box-shadow:0 24px 50px rgba(0,0,0,.2);padding:10px;display:none;z-index:80;}
+.dropdown.open .dropdown-menu,.dropdown:focus-within .dropdown-menu{display:block;}
+.dropdown-menu a{display:block;padding:12px 14px;border-radius:10px;color:#111;font-weight:600;}
+.dropdown-menu a:hover{background:#f4f6f9;color:#000;}
+.dropdown-menu a.highlight-link{color:#1b2430 !important;background:#fff6df;}
+.dropdown-menu a.highlight-link:hover{background:#ffe9b2;color:#111 !important;}
+.hero{padding:76px 44px 34px;background:radial-gradient(circle at 16% 18%, rgba(245,158,11,.14), transparent 26%),radial-gradient(circle at 84% 26%, rgba(56,189,248,.14), transparent 24%),linear-gradient(180deg, rgba(255,255,255,.02), transparent 35%);}
+.hero-shell{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.04fr .96fr;gap:30px;align-items:center;}
+.hero-copy .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border:1px solid rgba(56,189,248,.28);border-radius:999px;color:var(--accent3);font-size:.86rem;font-weight:700;background:rgba(56,189,248,.07);margin-bottom:14px;}
+.hero-copy h1{font-size:clamp(2.15rem,4vw,3.45rem);margin-bottom:18px;max-width:850px;}
+.hero-copy p{color:var(--muted);font-size:1.03rem;margin-bottom:13px;max-width:760px;}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;align-items:center;}
+.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:13px 22px;font-weight:700;border:1px solid transparent;}
+.btn-primary{background:linear-gradient(90deg,var(--accent),#f8c76a);color:#111827;}
+.btn-secondary{border-color:var(--border);color:var(--text);background:rgba(255,255,255,.02);}
+.hero-visual{position:relative;min-height:420px;border-radius:28px;overflow:hidden;background:linear-gradient(165deg, rgba(17,28,44,.96), rgba(13,21,35,.96));border:1px solid var(--border);box-shadow:0 24px 64px rgba(0,0,0,.28);padding:18px;}
+.hero-visual img{width:100%;height:100%;object-fit:cover;border-radius:20px;}
+.hero-stats{position:absolute;left:24px;right:24px;bottom:20px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.stat{background:rgba(7,17,26,.72);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:12px 12px 11px;}
+.stat strong{display:block;color:#fff;font-size:.94rem;margin-bottom:4px;}
+.stat span{color:var(--muted);font-size:.83rem;line-height:1.45;}
+main{max-width:1180px;margin:0 auto;padding:10px 44px 72px;}
+.feature-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:18px 0 58px;}
+.feature-card,.info-card{background:linear-gradient(180deg,var(--card),var(--card2));border:1px solid var(--border);border-radius:18px;box-shadow:0 18px 38px rgba(0,0,0,.14);}
+.feature-card{padding:18px 18px 16px;}
+.feature-card h3,.info-card h3{font-size:1.05rem;margin-bottom:10px;}
+.feature-card p,.info-card p{color:var(--muted);font-size:.95rem;}
+.block{margin:0 auto 58px;max-width:1040px;padding:20px 22px;background:linear-gradient(180deg,var(--card),var(--card2));border:1px solid var(--border);border-left:4px solid var(--accent3);border-radius:20px;box-shadow:0 18px 38px rgba(0,0,0,.14);}
+.block h2{font-size:1.58rem;margin-bottom:16px;}
+.block p{color:var(--muted);margin-bottom:12px;}.block p:last-child{margin-bottom:0;}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;margin-bottom:58px;}
+.split.reverse{grid-template-columns:1fr 1fr;}
+.media-card{background:linear-gradient(180deg,var(--card),var(--card2));border:1px solid var(--border);border-radius:24px;overflow:hidden;box-shadow:0 22px 50px rgba(0,0,0,.18);}
+.media-card img{width:100%;height:auto;display:block;}
+.text-card h2{font-size:1.55rem;margin-bottom:14px;}
+.text-card p{color:var(--muted);margin-bottom:12px;}
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.info-card{padding:18px 18px 16px;}
+.embed-section,.faq-section{margin-bottom:60px;}
+.section-title{font-size:1.64rem;margin-bottom:16px;}
+.embed-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.embed-card{background:#fff;color:#111;border-radius:22px;padding:18px;box-shadow:0 20px 45px rgba(0,0,0,.12);}
+.embed-card h3{color:#111;font-family:'Sora',sans-serif;font-size:1.32rem;margin-bottom:14px;}
+.embed-card iframe{width:100%;border:0;border-radius:16px;background:#fff;min-height:560px;}
+.embed-card.presentation iframe{min-height:560px;}
+.youtube-frame{
+  width:100%;
+  aspect-ratio:16 / 9;
+  height:auto;
+  display:block;
+  border:0;
+  border-radius:16px;
+  background:#000;
+}
+.faq-list{display:grid;gap:12px;}
+.faq-item{border:1px solid var(--border);border-radius:16px;background:linear-gradient(180deg,var(--card),var(--card2));overflow:hidden;}
+.faq-q{width:100%;background:none;border:0;color:#fff;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;font:700 1rem 'Inter',Arial,sans-serif;text-align:left;cursor:pointer;}
+.faq-q span{color:var(--accent3);font-size:1.25rem;transition:transform .2s ease;}
+.faq-item.open .faq-q span{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;padding:0 20px;color:var(--muted);transition:max-height .25s ease,padding .25s ease;}
+.faq-item.open .faq-a{max-height:260px;padding:0 20px 18px;}
+footer{background:var(--bg-alt);border-top:1px solid var(--border);padding:52px 44px 26px;}
+.footer-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.35fr .9fr .7fr;gap:34px;}
+.footer-col h4{font-size:1rem;margin-bottom:14px;color:#fff;}
+.footer-col p{color:var(--muted);max-width:340px;font-size:.95rem;}
+.footer-col ul{list-style:none;}
+.footer-col li{margin-bottom:10px;}
+.footer-col ul a{color:var(--muted);}
+.footer-col ul a:hover{color:var(--accent3);}
+.follow-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px;}
+.follow-row a{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);}
+.copyright{max-width:1180px;margin:34px auto 0;padding-top:20px;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.86rem;}
+@media (max-width:980px){header,main,footer,.hero{padding-left:20px;padding-right:20px;}.hero-shell,.split,.embed-grid,.footer-grid,.feature-row,.card-grid{grid-template-columns:1fr;}nav ul{gap:14px;justify-content:flex-end;}.dropdown-menu{left:auto;right:0;}.hero{padding-top:58px;}.hero-visual{min-height:340px;}.hero-stats{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="index.html">Uncensored AI Chat</a>
+  <nav>
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li class="dropdown">
+        <button type="button" class="dropdown-toggle" id="services-toggle" aria-expanded="false">
+          Services <span class="caret">▾</span>
+        </button>
+        <div class="dropdown-menu">
+          <a class="highlight-link" href="services.html">AI chatbot for private conversations</a>
+        </div>
+      </li>
+      <li><a href="about-us.html">About Us</a></li>
+      <li><a href="contact-us.html">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>
+<section class="hero">
+  <div class="hero-shell">
+    <div class="hero-copy">
+            <h1><a class="highlight-link" href="https://uncensored-ai.chat/">Uncensored AI Chat Explained: What Makes Private AI Conversations Different</a></h1>
+      <p>Artificial intelligence has changed the way people search for information, develop ideas, write content, and enjoy interactive conversations. However, many users now want more than a basic chatbot that provides short, heavily structured, or repetitive responses. They are looking for a private AI chat platform that offers greater control, more flexible interactions, and a comfortable environment for exploring different topics.</p>
+      <p>Uncensored AI Chat is designed for users who prefer conversations that feel open, personalized, and responsive. Instead of limiting every discussion to a narrow format, the platform aims to support natural communication across creative writing, brainstorming, fictional scenarios, roleplay, personal reflection, and casual conversation.</p>
+</div>
+    <div class="hero-visual">
+      <img src="hero-chat.png" alt="Private AI chat interface with layered conversation panels">
+    </div>
+  </div>
+</section>
+
+<section class="block"><p>This approach makes private AI conversations different from ordinary chatbot experiences. The focus is not only on receiving an answer. It is also about having space to shape the conversation according to individual interests, preferences, and goals.</p></section>
+<section class="split"><div class="media-card"><img src="creative-storytelling.png" alt="Creative brainstorming workspace"></div><div class="text-card"><h2>What Is a Private AI Chat Platform?</h2><p>A private AI chat platform is an online environment where users can communicate with an artificial intelligence system through direct, personalized conversations. Privacy, flexibility, and user control are central parts of the experience.</p><p>Traditional AI tools are often designed mainly for professional productivity, customer support, or quick information retrieval. While these tools can be useful, they may not always offer the conversational depth users want. A private platform can provide a more personal setting where the user decides the subject, tone, direction, and style of the interaction.</p><p>Uncensored AI Chat works as an <a class="highlight-link" href="https://uncensored-ai.chat/">AI chatbot for private conversations</a>, allowing people to explore ideas without needing to follow a fixed script. The platform may be used for entertainment, creative experimentation, fictional storytelling, character interaction, or open discussion.</p><p>Users can visit Uncensored AI Chat when they want a direct online conversation that feels less formal than a traditional search engine or business-focused chatbot.</p></div></section>
+<section class="split reverse">
+      <div class="media-card"><img src="privacy-chat.png" alt="Secure private AI conversation"></div>
+      <div class="text-card"><h2>Why Private AI Conversations Feel Different</h2><p>Private AI conversations are different because they are shaped around the individual user. Instead of delivering the same type of interaction to everyone, the AI can respond to the user’s preferred tone, topic, and conversational direction.</p><p>A person may begin with a simple question and gradually move into a detailed discussion. Another user may want to create a fictional character, test dialogue for a story, or explore an imaginative scenario. This adaptability creates a more engaging and personal experience.</p><p>A private online AI companion can also provide consistent interaction without the pressure that sometimes comes with communicating in public forums. Users can express ideas, revise prompts, and change subjects without worrying about how a wider audience might react.</p><p>The result is a conversational space that feels more focused and individually controlled.</p></div>
+    </section>
+<section class="block">
+      <h2>A Flexible AI Conversation Tool for Different Purposes</h2>
+      <p>One of the main benefits of Uncensored AI Chat is its ability to function as a flexible AI conversation tool. Different users can approach the platform with different intentions, and the AI can adjust accordingly.</p>
+      <div class="card-grid">
+        <article class="info-card"><h3>Creative Writing and Story Development</h3><p>Writers can use the platform to develop characters, improve dialogue, build fictional worlds, or experiment with alternative plot directions. Rather than generating a single finished answer, the AI can participate in an ongoing creative exchange.</p><p>This allows writers to explore scenes in greater detail and test multiple ideas before choosing a final direction. The conversation can continue naturally as the user adds new information or changes the story.</p></article>
+        <article class="info-card"><h3>Brainstorming and Idea Exploration</h3><p>Users can also use the online tool to brainstorm names, themes, concepts, projects, or creative possibilities. A conversational format often makes brainstorming easier because each response can lead to a new question or perspective.</p><p>An open-ended AI chat experience does not require users to know the perfect prompt before beginning. They can start with a broad thought and gradually refine it through conversation.</p></article>
+        <article class="info-card"><h3>Casual and Personal Conversations</h3><p>Not every AI interaction needs to be connected to work or productivity. Some people simply want to discuss their interests, explore fictional topics, or enjoy a personalized conversation.</p><p>Uncensored AI Chat can serve as a space for relaxed interaction. Users can start chatting about books, entertainment, personal goals, imagined situations, or any suitable topic they want to explore.</p></article>
+      </div>
+    </section>
+<section class="split"><div class="media-card"><img src="idea-exploration.png" alt="Focused AI idea exploration"></div><div class="text-card"><h2>AI Chat Without Unnecessary Interruptions</h2><p>Some chatbot experiences can feel disconnected because the system repeatedly redirects the user, changes the subject, or interrupts the natural flow of discussion. This can be frustrating during creative writing, storytelling, or longer conversations.</p><p>An AI chat without unnecessary interruptions offers a smoother experience. The system can follow the established context and respond in a way that supports continuity.</p><p>This is especially useful when the user is creating a detailed fictional scenario or discussing a subject across several messages. Instead of restarting the conversation, the AI can build on previous information and maintain the selected style.</p></div></section>
+<section class="block"><p>A continuous interaction makes the exchange feel less mechanical and more conversational.</p></section>
+<section class="split reverse"><div class="media-card"><img src="hero-chat.png" alt="Flexible conversational AI interface"></div><div class="text-card"><h2>Conversational AI With Greater Freedom and User Control</h2><p>Many users are attracted to conversational AI with greater freedom because it gives them more influence over the interaction. They can decide whether the conversation should be formal, humorous, imaginative, descriptive, serious, or casual.</p><p>Greater freedom does not simply mean producing longer responses. It means giving the user more control over how the conversation develops.</p><p>For example, a user may ask the AI to respond as a fictional character, use a particular communication style, or help create an interactive story. The user can then adjust the instructions as the conversation continues.</p><p>This creates a customizable AI chatbot experience in which the system responds to individual preferences rather than forcing every user into the same conversational pattern.</p></div></section>
+<section class="split"><div class="media-card"><img src="creative-storytelling.png" alt="Private roleplay world building"></div><div class="text-card"><h2>Private AI Roleplay Chat Platform Features</h2><p>Roleplay is one of the most popular uses of conversational AI. A private AI roleplay chat platform allows users to create characters, personalities, environments, and fictional situations through text-based interaction.</p><p>Users may develop an original character or create a broader imaginary world with specific rules and background details. The AI can then respond according to those instructions, helping the conversation remain consistent.</p><p>Roleplay can also support writers who want to test character dialogue or understand how different personalities might react in a scene. Because the conversation happens privately, users can experiment freely and revise their ideas whenever needed.</p><p>An unrestricted-style AI conversation tool may provide additional flexibility by allowing users to shape the tone and structure of the roleplay. This can make fictional interactions feel more dynamic, detailed, and personalized.</p></div></section>
+<section class="split reverse"><div class="media-card"><img src="privacy-chat.png" alt="Customizable chat experience"></div><div class="text-card"><h2>How Customization Improves the AI Chat Experience</h2><p>Customization plays an important role in making AI conversations more useful. A generic response may answer a question, but a customized response can better reflect the user’s intended purpose.</p><p>Users may provide instructions about tone, response length, character personality, language style, or conversation format. The AI can use these details to create a more relevant interaction.</p><p>For example, someone writing a dramatic scene may request descriptive and emotionally detailed responses. Another person may prefer short, direct replies for a fast-moving fictional exchange. Both users are working with the same type of technology, but their experiences can feel completely different because of customization.</p></div></section>
+<section class="block"><p>This level of control helps Uncensored AI Chat support a wider range of conversation styles.</p></section>
+<section class="split"><div class="media-card"><img src="idea-exploration.png" alt="Privacy and responsibility notes"></div><div class="text-card"><h2>Privacy and Responsible Platform Use</h2><p>Privacy is an important consideration when using any online communication tool. Users should review the platform’s available privacy information, terms, and data-handling policies before sharing sensitive details.</p><p>A private chat environment should not be treated as a replacement for professional medical, legal, financial, or mental health support. It is also wise to avoid entering passwords, financial information, confidential business records, or personally identifying data into any online chatbot.</p><p>Responsible use helps users benefit from AI conversation tools while maintaining appropriate personal boundaries. Understanding how the platform works can lead to a safer and more satisfying experience.</p></div></section>
+<section class="split reverse"><div class="media-card"><img src="hero-chat.png" alt="Accessing the AI chat interface"></div><div class="text-card"><h2>How to Access Uncensored AI Chat</h2><p>Getting started with Uncensored AI Chat is straightforward. Users can visit the website to review the platform’s features and understand how the chat interface works.</p><p>Those interested in the service can explore the platform before beginning a longer conversation. The website provides an opportunity to learn more about the available AI interaction options and determine whether they match the user’s preferences.</p><p>When ready, users can try it online, access the AI chat, and begin entering prompts through the conversation interface. New users may start with a simple question before moving into more detailed topics, roleplay scenarios, or creative discussions.</p><p>People who are curious about a more flexible chatbot can check it out and explore Uncensored AI Chat directly. The easiest way to understand the experience is to use the online tool and see how the AI responds to different conversation styles.</p></div></section>
+<section class="split"><div class="media-card"><img src="creative-storytelling.png" alt="People using private AI chat for creative work"></div><div class="text-card"><h2>Who May Benefit From Uncensored AI Chat?</h2><p>Uncensored AI Chat may appeal to writers, roleplay enthusiasts, creative thinkers, and users who enjoy extended AI conversations. It can also be useful for people who want to brainstorm privately without posting their ideas publicly.</p><p>The platform is particularly relevant for users who feel that standard chatbot experiences are too rigid or repetitive. Its conversational approach gives people room to adjust the interaction as their ideas develop.</p><p>Someone may begin by requesting a short fictional scene and later turn it into a detailed character conversation. Another user may use the platform to explore several versions of an idea before deciding which one works best.</p><p>This ability to move naturally between topics is one of the qualities that separates flexible private AI chat from basic question-and-answer tools.</p></div></section>
+  <section class="block">
+    <h2>YouTube Video</h2>
+    <div style="margin-top:16px;padding:16px;border:1px solid #2a2545;border-radius:22px;background:#16132a;box-shadow:0 20px 45px rgba(0,0,0,.12);">
+<iframe class="youtube-frame" src="https://www.youtube.com/embed/sAKgm4vgyRA?si=f-7pkShVk-ThNHkA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </section>
+  <section class="embed-section">
+      <h2 class="section-title">Google Embeds</h2>
+      <div class="embed-grid">
+        <div class="embed-card">
+          <h3>Google Docs</h3>
+          <iframe src="https://docs.google.com/document/d/e/2PACX-1vTuPVvyYnInWpKDWeuXDob30zWO9ljVB_sPS8XkMHv86tEVJ6fyypeegcvlMVhydsqr_GUVBsKXwMDs/pub?embedded=true" loading="lazy"></iframe>
+        </div>
+        <div class="embed-card presentation">
+          <h3>Google Presentation</h3>
+          <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vT0VOhO7wpLAoXpbm1w12CweTPnhKEn3MvAXdAEyYRHJedPiCWwkqf5sQe-yhlrz5d-qmdWjH6VJt35/pubembed?start=false&loop=false&delayms=3000" allowfullscreen="true" loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+<section class="faq-section">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-list" id="faq-list">
+        <div class="faq-item"><button class="faq-q" type="button">What is a private AI chat platform?<span>+</span></button><div class="faq-a"><p>It is an online conversational space where privacy, flexibility, and user control are central to the experience.</p></div></div>
+        <div class="faq-item"><button class="faq-q" type="button">How is Uncensored AI Chat different from standard chatbots?<span>+</span></button><div class="faq-a"><p>It focuses on more open and personalized conversations instead of only narrow question-and-answer exchanges.</p></div></div>
+        <div class="faq-item"><button class="faq-q" type="button">Can it support creative writing and roleplay?<span>+</span></button><div class="faq-a"><p>Yes. The platform is built for creative writing, scenario building, fictional dialogue, and flexible roleplay interactions.</p></div></div>
+        <div class="faq-item"><button class="faq-q" type="button">Why does privacy matter in AI conversations?<span>+</span></button><div class="faq-a"><p>Privacy helps people discuss ideas more comfortably, especially when they are exploring personal, creative, or sensitive topics.</p></div></div>
+        <div class="faq-item"><button class="faq-q" type="button">Who may benefit from Uncensored AI Chat?<span>+</span></button><div class="faq-a"><p>Writers, brainstorming users, roleplay enthusiasts, and anyone who wants a more flexible chatbot can benefit from the platform.</p></div></div>
+      </div>
+    </section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>About</h4>
+      <p>Uncensored AI Chat is a flexible, private AI conversation platform for creative writing, roleplay, character building and open-ended chat.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact-us.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+      <div class="follow-row">
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="Instagram">ig</a>
+        <a href="#" aria-label="X">x</a>
+      </div>
+    </div>
+  </div>
+  <div class="copyright">&copy; 2026 Uncensored AI Chat. All rights reserved.</div>
+</footer>
+<script>
+document.querySelectorAll('.faq-item .faq-q').forEach((button) => {
+  button.addEventListener('click', () => button.parentElement.classList.toggle('open'));
+});
+const servicesToggle = document.getElementById('services-toggle');
+const servicesDropdown = servicesToggle?.closest('.dropdown');
+if (servicesToggle && servicesDropdown) {
+  servicesToggle.addEventListener('click', (event) => {
+    event.stopPropagation();
+    const isOpen = servicesDropdown.classList.toggle('open');
+    servicesToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+  document.addEventListener('click', (event) => {
+    if (!servicesDropdown.contains(event.target)) {
+      servicesDropdown.classList.remove('open');
+      servicesToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
+</script>
+</body>
+</html>

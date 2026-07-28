@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uncensored AI Chat | About Us</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+:root{
+  --bg:#0c0a16;
+  --bg-alt:#131022;
+  --card:#16132a;
+  --violet:#8b5cf6;
+  --violet-soft:#a78bfa;
+  --cyan:#22d3ee;
+  --text:#e7e4f4;
+  --muted:#a9a4c4;
+  --border:#2a2545;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+a{text-decoration:none;color:inherit;}
+h1,h2,h3,h4{font-family:'Sora',sans-serif;color:#fff;line-height:1.25;}
+img{max-width:100%;display:block;}
+
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 48px;
+  background:rgba(12,10,22,.85);backdrop-filter:blur(8px);position:sticky;top:0;z-index:50;
+  border-bottom:1px solid var(--border);}
+.logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.25em;cursor:pointer;
+  background:linear-gradient(90deg,var(--violet-soft),var(--cyan));
+  -webkit-background-clip:text;background-clip:text;color:transparent;}
+nav ul{list-style:none;display:flex;align-items:center;gap:34px;}
+nav a{font-weight:500;color:var(--muted);transition:color .2s;cursor:pointer;}
+nav a:hover,nav a.active{color:#fff;}
+.dropdown{position:relative;}
+.dropdown-toggle{
+  display:inline-flex;align-items:center;gap:8px;
+  background:none;border:0;padding:0;
+  font:inherit;font-weight:500;color:var(--muted);cursor:pointer;
+}
+.dropdown-toggle:hover{color:#fff;}
+.dropdown-toggle .caret{font-size:.75rem;transform:translateY(1px);}
+.dropdown-menu{
+  position:absolute;top:calc(100% + 10px);left:0;min-width:240px;
+  background:#fff;color:#111;border:1px solid #ddd;border-radius:14px;
+  box-shadow:0 20px 45px rgba(0,0,0,.18);padding:10px;display:none;z-index:80;
+}
+.dropdown.open .dropdown-menu,.dropdown:focus-within .dropdown-menu{display:block;}
+.dropdown-menu a{
+  display:block;padding:12px 14px;border-radius:10px;color:#111;font-weight:600;
+}
+.dropdown-menu a:hover{background:#f4f4f8;color:#000;}
+.cta-btn{background:linear-gradient(90deg,var(--violet),var(--cyan));color:#0c0a16!important;
+  font-weight:600;padding:10px 22px;border-radius:30px;font-size:.95em;}
+
+.page{display:none;}
+.page.active{display:block;}
+
+.hero{position:relative;overflow:hidden;padding:100px 48px 90px;
+  background:radial-gradient(circle at 20% 20%, rgba(139,92,246,.25), transparent 45%),
+             radial-gradient(circle at 85% 60%, rgba(34,211,238,.18), transparent 40%);
+  text-align:center;}
+.hero h1{font-size:2.7em;max-width:820px;margin:0 auto 20px;font-weight:800;}
+.hero p{color:var(--muted);max-width:640px;margin:0 auto 34px;font-size:1.05em;}
+.hero .cta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.btn-primary{background:linear-gradient(90deg,var(--violet),var(--cyan));color:#0c0a16;
+  font-weight:700;padding:14px 30px;border-radius:30px;cursor:pointer;}
+.btn-ghost{border:1px solid var(--border);color:var(--text);padding:14px 30px;border-radius:30px;cursor:pointer;}
+
+.chat-mock{max-width:420px;margin:56px auto 0;background:var(--card);border:1px solid var(--border);
+  border-radius:18px;padding:22px;text-align:left;box-shadow:0 20px 60px rgba(139,92,246,.15);}
+.bubble{padding:12px 16px;border-radius:14px;margin-bottom:12px;max-width:80%;font-size:.92em;}
+.bubble.user{background:var(--bg-alt);margin-left:auto;border:1px solid var(--border);}
+.bubble.ai{background:linear-gradient(135deg,rgba(139,92,246,.25),rgba(34,211,238,.15));border:1px solid rgba(139,92,246,.4);}
+
+.page-hero{padding:70px 48px 40px;text-align:center;
+  background:radial-gradient(circle at 50% 0%, rgba(139,92,246,.18), transparent 50%);}
+.page-hero h1{font-size:2.2em;}
+
+main{max-width:1080px;margin:0 auto;padding:70px 24px;}
+.row{display:flex;gap:48px;align-items:center;margin-bottom:70px;}
+.row.reverse{flex-direction:row-reverse;}
+.row .visual{flex:0 0 320px;height:260px;border-radius:16px;position:relative;overflow:hidden;
+  background:linear-gradient(160deg,var(--card),var(--bg-alt));border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;}
+.row .visual::before{content:"";position:absolute;width:200px;height:200px;border-radius:50%;
+  background:radial-gradient(circle,rgba(139,92,246,.45),transparent 70%);filter:blur(10px);}
+.row .visual svg{position:relative;width:70%;}
+.row .text{flex:1;}
+.row h2{font-size:1.5em;margin-bottom:14px;}
+.row p{color:var(--muted);margin-bottom:12px;}
+
+section.block{margin-bottom:70px;}
+section.block h2{font-size:1.5em;margin-bottom:16px;}
+section.block h3{font-size:1.15em;margin:26px 0 10px;color:var(--violet-soft);}
+section.block p{color:var(--muted);margin-bottom:12px;}
+
+.faq-title{text-align:center;font-size:1.6em;margin-bottom:30px;}
+.faq-item{border:1px solid var(--border);border-radius:12px;margin-bottom:12px;overflow:hidden;background:var(--card);}
+.faq-q{padding:18px 22px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;}
+.faq-q .icon{color:var(--cyan);transition:transform .2s;}
+.faq-item.open .icon{transform:rotate(180deg);}
+.faq-a{max-height:0;overflow:hidden;padding:0 22px;color:var(--muted);transition:max-height .25s ease;}
+.faq-item.open .faq-a{max-height:220px;padding:0 22px 18px;}
+
+.contact-wrap{display:flex;justify-content:center;padding:40px 24px 90px;}
+.contact-card{background:var(--card);border:1px solid var(--border);border-radius:18px;
+  padding:40px;max-width:520px;width:100%;box-shadow:0 20px 60px rgba(139,92,246,.12);}
+.contact-card h2{font-size:1.5em;margin-bottom:6px;}
+.contact-card p.sub{color:var(--muted);margin-bottom:26px;font-size:.95em;}
+.field{margin-bottom:18px;}
+.field label{display:block;font-size:.85em;color:var(--muted);margin-bottom:6px;}
+.field input,.field textarea{width:100%;background:var(--bg-alt);border:1px solid var(--border);border-radius:10px;
+  padding:12px 14px;color:var(--text);font-family:'Inter',sans-serif;font-size:.95em;}
+.field textarea{resize:vertical;min-height:110px;}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--violet);}
+.submit-btn{width:100%;background:linear-gradient(90deg,var(--violet),var(--cyan));
+  color:#0c0a16;font-weight:700;padding:14px;border:none;border-radius:30px;cursor:pointer;font-size:.95em;}
+.follow-row{display:flex;gap:14px;justify-content:center;margin-top:26px;}
+.follow-row a{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;color:var(--muted);}
+
+footer{background:var(--bg-alt);border-top:1px solid var(--border);padding:56px 48px 26px;}
+.footer-grid{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;max-width:1080px;margin:0 auto;}
+.footer-col h4{font-size:1em;margin-bottom:16px;color:#fff;}
+.footer-col p{color:var(--muted);font-size:.9em;max-width:280px;}
+.footer-col ul{list-style:none;}
+.footer-col ul li{margin-bottom:10px;}
+.footer-col ul a{color:var(--muted);font-size:.9em;}
+.footer-col ul a:hover{color:var(--cyan);}
+.footer-col .follow-row{justify-content:flex-start;}
+.copyright{text-align:center;color:var(--muted);font-size:.85em;margin-top:40px;
+  padding-top:20px;border-top:1px solid var(--border);}
+
+@media(max-width:800px){
+  header{padding:16px 20px;}
+  .hero{padding:70px 20px 60px;}
+  .row,.row.reverse{flex-direction:column;}
+  .row .visual{width:100%;flex:none;}
+  .dropdown-menu{left:auto;right:0;}
+  footer{padding:40px 20px 20px;}
+}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="index.html">Uncensored AI Chat</a>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <button type="button" class="dropdown-toggle" id="services-toggle" aria-expanded="false">
+          Services <span class="caret">&#9662;</span>
+        </button>
+        <div class="dropdown-menu">
+          <a href="services.html">AI chatbot for private conversations</a>
+        </div>
+      </li>
+      <li><a href="about-us.html">About Us</a></li>
+      <li><a href="contact-us.html">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>
+<div class="page active" id="page-about"><div class="page-hero"><h1>About Us</h1></div><main><section class="block"><p>About Us</p><p>Welcome to Uncensored AI Chat</p><p>Uncensored AI Chat was created for people who want a more flexible, personalized, and engaging way to communicate with artificial intelligence. We believe AI conversations should feel natural, responsive, and shaped by the user’s goals rather than restricted to short, repetitive, or overly scripted interactions.</p><p>Our platform gives users a space to explore ideas, develop fictional characters, brainstorm creative concepts, enjoy roleplay, and participate in open-ended conversations. Whether you are a writer searching for inspiration, a creator developing a new project, or simply someone interested in personalized digital interaction, Uncensored AI Chat offers tools designed to make every conversation more adaptable.</p><p>We aim to provide an online AI experience where users have greater influence over the tone, style, depth, and direction of each discussion.</p><p>Why We Created Uncensored AI Chat</p><p>Many traditional chatbots are built for limited tasks. They may answer customer service questions, provide basic information, or guide users through predefined processes. While these systems can be useful, they are not always suitable for creativity, storytelling, brainstorming, or extended conversations.</p><p>Users often want more than a quick answer. They want to continue an idea, adjust the tone, introduce new details, create a personality, or change the direction of the conversation without starting again.</p><p>Uncensored AI Chat was developed to meet this need.</p><p>Our goal is to provide a flexible AI conversation tool that adapts to user instructions and supports a wider variety of interactions. Conversations can begin with a simple concept and gradually become detailed stories, character-driven scenarios, creative discussions, or personalized exchanges.</p><p>We want users to feel that they are guiding the experience. The platform provides the technology, while the user determines where the conversation should go.</p><p>Our Mission</p><p>Our mission is to make conversational AI more flexible, creative, and accessible.</p><p>We want to give users a platform where they can express ideas, experiment with different communication styles, and interact with AI in a way that feels relevant to their interests. Rather than forcing every conversation into the same structure, we aim to support a customizable AI chatbot experience.</p><p>Uncensored AI Chat is designed to encourage exploration. Users can define personalities, create fictional settings, establish a preferred tone, and continue developing conversations through detailed prompts.</p><p>We also believe that greater flexibility should be supported by responsible use. Our platform is intended for creative communication, entertainment, brainstorming, storytelling, and personal exploration. Users should always apply their own judgement and avoid treating AI-generated responses as professional advice or guaranteed facts.</p><p>A Platform Built Around Personalization</p><p>Every user communicates differently. Some people prefer brief and direct answers, while others enjoy detailed descriptions, emotional dialogue, humour, or immersive storytelling.</p><p>Uncensored AI Chat allows users to shape the experience based on their preferences. The chatbot can be guided through instructions related to tone, personality, response style, format, and conversational purpose.</p><p>A writer may use the platform to create dialogue between fictional characters. A roleplay enthusiast may build an imaginary world and interact with a customized personality. A creator may use the chatbot to test ideas, compare different directions, or work through a creative block.</p><p>This level of personalization can make conversations feel more engaging and consistent. The more context users provide, the better the AI can understand the intended direction of the interaction.</p><p>Supporting Creativity and Open-Ended Conversation</p><p>Creativity does not always follow a clear path. A strong idea may begin as a single sentence and develop through several different versions before becoming complete.</p><p>Uncensored AI Chat supports this process by allowing users to explore possibilities through conversation. They can request another viewpoint, rewrite a scene, change the mood, introduce a new character, or develop an alternative outcome.</p><p>The platform can be used for creative writing, brainstorming, fictional dialogue, roleplay, character development, entertainment, and general conversation. It provides an interactive environment where ideas can be expanded and refined through follow-up prompts.</p><p>Artificial intelligence does not replace human creativity. Instead, it can act as a useful starting point or creative partner. Users remain responsible for reviewing, editing, and shaping the final material according to their own standards and goals.</p><p>Our Approach to Privacy and Responsible Use</p><p>We understand that privacy is an important part of online conversations. Users should feel informed about how a platform works and how their information may be handled.</p><p>We encourage everyone to review the available privacy policies, data practices, and account settings before using any online AI service. Users should also avoid sharing passwords, banking details, identification documents, confidential business information, or highly sensitive personal data during a conversation.</p><p>AI-generated responses may occasionally include incorrect, outdated, inconsistent, or invented information. For that reason, users should verify important claims before relying on them.</p><p>Uncensored AI Chat should not be treated as a substitute for qualified legal, medical, financial, or mental health advice. The platform is designed to support creativity, entertainment, idea development, and personalized communication.</p><p>Our Vision for the Future</p><p>Conversational AI is continuing to evolve. Improvements in contextual understanding, customization, memory controls, voice interaction, and multilingual communication are making AI tools more responsive and useful.</p><p>Our vision is to remain part of this development by providing an experience that puts user choice at the centre of the conversation. We want Uncensored AI Chat to become a destination for people who value creativity, personalization, and open-ended digital interaction.</p><p>As technology improves, we aim to continue exploring ways to make conversations smoother, more relevant, and easier to customize. Our focus will remain on providing users with greater control while encouraging informed and responsible interaction.</p><p>Start Exploring Uncensored AI Chat</p><p>Uncensored AI Chat is more than a standard question-and-answer tool. It is a platform where users can build conversations around their own ideas, interests, and creative goals.</p><p>You can use the online tool to develop stories, create fictional personalities, explore roleplay scenarios, brainstorm new concepts, or simply experience a different style of AI interaction.</p><p>Visit Uncensored AI Chat to explore the platform, learn more about its features, and start chatting. Discover how flexible and personalized artificial intelligence can support creativity, entertainment, and open-ended conversations online.</p></section></main></div>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>About</h4>
+      <p>Uncensored AI Chat is a flexible, private AI conversation platform for creative writing, roleplay, character building and open-ended chat.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact-us.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+      <div class="follow-row">
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="Instagram">?</a>
+        <a href="#" aria-label="X">?</a>
+      </div>
+    </div>
+  </div>
+  <div class="copyright">&copy; 2026 Uncensored AI Chat. All rights reserved.</div>
+</footer>
+<script>
+const servicesToggle = document.getElementById('services-toggle');
+const servicesDropdown = servicesToggle?.closest('.dropdown');
+if (servicesToggle && servicesDropdown) {
+  servicesToggle.addEventListener('click', (event) => {
+    event.stopPropagation();
+    const isOpen = servicesDropdown.classList.toggle('open');
+    servicesToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+  document.addEventListener('click', (event) => {
+    if (!servicesDropdown.contains(event.target)) {
+      servicesDropdown.classList.remove('open');
+      servicesToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
+</script>
+</body>
+</html>
